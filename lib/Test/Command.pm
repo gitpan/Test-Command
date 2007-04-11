@@ -39,17 +39,17 @@ Test::Command - Test routines for external commands
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
 Test the exit status, STDOUT or STDERR of an external command.
 
-   use Test::Command;
+   use Test::Command tests => 11;
 
    ## testing exit status
 
@@ -81,7 +81,7 @@ Test the exit status, STDOUT or STDERR of an external command.
 
    ## run-once-test-many-OO-style
    ## the first test lazily runs command
-   ## second test uses cached results
+   ## the second test uses cached results
 
    my $echo_test = Test::Command->new( cmd => 'echo out' );
 
@@ -908,6 +908,8 @@ under the same terms as Perl itself.
 =head1 DEVELOPMENT IDEAS
 
 =over 3
+
+=item * create a tool that produces test scripts given a list of commands to run
 
 =item * optionally save the temp files with STDOUT and STDERR for user debugging
 

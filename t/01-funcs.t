@@ -40,7 +40,7 @@ SKIP:
    skip 'could not find a non-existent file name', 1
       if -e $rand_file;
    eval { $text = Test::Command::_slurp($rand_file) };
-   like($@, qr/No such file/, '_slurp - no such file');
+   ok($@, '_slurp - no such file');
    }
 
 eval { Test::Command::_slurp() };
@@ -112,11 +112,11 @@ SKIP:
 
    eval { Test::Command::_compare_files($rand_file,
                                         "$FindBin::Bin/stdout.txt") };
-   like($@, qr/No such file/, '_compare_files - no such file - got');
+   ok($@, '_compare_files - no such file - got');
 
    eval { Test::Command::_compare_files("$FindBin::Bin/stdout.txt",
                                         $rand_file) };
-   like($@, qr/No such file/, '_compare_files - no such file - exp');
+   ok($@, '_compare_files - no such file - exp');
    }
 
 my $diff_column = Test::Command::_diff_column();
