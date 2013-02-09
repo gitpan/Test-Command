@@ -15,10 +15,10 @@ name: Test-Command
 provides:
   Test::Command:
     file: lib/Test/Command.pm
-    version: 0.09
+    version: 0.10
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Test-Command
   homepage: https://metacpan.org/release/Test-Command
   license: http://dev.perl.org/licenses/
   repository: https://github.com/danboo/perl-test-command
-version: 0.09
+version: 0.10
